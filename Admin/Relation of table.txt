@@ -1,0 +1,3 @@
+Relation of table:
+
+ALTER TABLE as_user ADD FOREIGN KEY(role_id) REFERENCES as_role(role_id);

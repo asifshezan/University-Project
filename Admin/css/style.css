@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+ul, ol{
+    list-style-type: none;
+}
+
+img{
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+
+}
+
+.header_full{
+    background: #445fa2;
+    height: 60px;
+    width: 100%;
+}
+
+.slider_part{
+    background-color: rgb(56, 51, 51);
+    height: 812px;
+}
+
+.user_part{
+    text-align: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid #416388;
+    /* margin: 0px -15px; */
+}
+
+.user_part img{
+    height: 100px;
+    width: 100px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.user_part h4{
+    font-size: 16px;
+    padding-top: 10px;
+    color: #fff;
+}
+
+.user_part p i{
+    color: #08b925;
+    font-size: 10px;
+    padding-right: 5px;
+}
+
+.user_part p{
+    color: #fff;
+    font-size: 12px;
+}
+
+
+.menu ul li a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    text-decoration: none;
+    line-height: 15px;
+    transition: all linear 0.5s;
+    border-bottom: 1px solid #416388;
+    padding: 15px 10px;
+}
+
+.menu ul li a:hover{
+    background-color: #445fa2;
+}
+
+.custom_breadpart {
+    background-color: aliceblue;
+}
+
+.bread ul li{
+    float: left;
+    padding: 10px 0px;
+}
+
+.bread ul li a{
+    color: #000;
+    font-size: 14px;
+    line-height: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.bread ul li a i{
+    padding: 0px 5px;
+}
+
+.main_content{
+    padding: 20px;
+    font-size: 16px;
+}
+
+.footer_full{
+	height: 50px;
+	background-color: #16171D;
+}
+
+/* Index file End */
+
+
+/* Register file start */
+
+.card_header_title{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 6px;
+	font-family: verdana;
+	text-transform: uppercase;
+    line-height: -4px;
+}
+.card_header_title i{
+    padding-right: 7px;
+    font-size: 20px;
+}
+.card_top_btn i{
+    padding-right: 7px;
+}
+.card_top_btn{
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.custom_form_group label.col-form-label{
+    text-align: right;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table.custom_view_table tr td:first-child{
+    font-weight: 600;
+    text-align: right;
+    width: 29%;
+}
+
+table.custom_view_table tr td:last-child{
+	font-weight: normal;
+	text-align: left;
+	width: 70%;
+}
+.custom_view_table tr td.dot{
+    text-align: center;
+}
+
+.login_main_part{
+    margin-top: 150px;
+}
