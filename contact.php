@@ -50,18 +50,35 @@
 			<div class="container">
 				<div class="row d-flex align-items-stretch no-gutters">
 					<div class="col-md-6 p-4 p-md-5 order-md-last bg-light">
-						<form action="#">
+          <?php 
+          if(!empty($_POST)){
+            $name = htmlentities($_POST['name'], ENT_QUOTES);
+            $email = htmlentities ($_POST['email'], ENT_QUOTES);
+            $subject = htmlentities ($_POST['sub'], ENT_QUOTES);
+            $message = htmlentities ($_POST['mess'], ENT_QUOTES);
+            // $contmess = 'Name: '.$name.'\n'.'Email: '.$email.'\n'.'Subject: '.$sub.'\n'.'Message: '.$message;
+            $selet = "INSERT INTO as_contact(con_name, con_email, con_subj, con_mess)VALUES('$name', '$email', '$subject', '$message')";
+            if(mysqli_query($con, $selet)){
+              // mail('asifshezan7@gmail.com','University project contact message.',$contmess);
+              echo "Successfully send your message.";
+            }else{
+              echo "Opps! Failed to send your message.";
+            }
+          }
+          ?>
+
+						<form method="POST" action="">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" name="name" placeholder="Your Name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="email" class="form-control" name="email" placeholder="Your Email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
+                <input type="text" class="form-control" name="sub" placeholder="Subject">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea cols="30" rows="7" class="form-control" name="mess" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">

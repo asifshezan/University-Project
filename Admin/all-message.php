@@ -58,8 +58,8 @@
                             ?></td>
                             <td><?= $data['con_name']; ?></td>
                             <td><?= $data['con_email']; ?></td>
-                            <td><?= $data['con_subj']; ?></td>
-                            <td><?= $data['con_mess']; ?></td>
+                            <td><?= substr($data['con_subj'],0,20); ?>.....</td>
+                            <td><?= substr($data['con_mess'],0,40); ?>.....</td>
                             <td><?= $data['con_time']; ?></td>
                             <td>
                                 <a href="view-message.php?v=<?php echo $data['con_id']; ?>"><i class="fa fa-plus-square fa-lg"></i></a>
