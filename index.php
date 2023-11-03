@@ -27,50 +27,23 @@
 <section class="ftco-services ftco-no-pb">
   <div class="container-wrap">
     <div class="row no-gutters">
-      <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
+      <?php 
+        $selet = "SELECT * FROM as_feature ORDER BY feat_id ASC LIMIT  0,4";
+        $Quer = mysqli_query($con, $selet);
+        while($allfeat = mysqli_fetch_assoc($Quer)){ 
+      ?>
+      <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate <?= $allfeat['feat_bg']; ?>">
         <div class="media block-6 d-block text-center">
           <div class="icon d-flex justify-content-center align-items-center">
-            <span class="flaticon-teacher"></span>
+            <span class="<?= $allfeat['feat_icon']; ?>"></span>
           </div>
           <div class="media-body p-2 mt-3">
-            <h3 class="heading">Certified Teachers</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+            <h3 class="heading"><?= $allfeat['feat_title']; ?></h3>
+            <p><?= $allfeat['feat_subtitle']; ?></p>
           </div>
         </div>
       </div>
-      <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
-        <div class="media block-6 d-block text-center">
-          <div class="icon d-flex justify-content-center align-items-center">
-            <span class="flaticon-reading"></span>
-          </div>
-          <div class="media-body p-2 mt-3">
-            <h3 class="heading">Special Education</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
-        <div class="media block-6 d-block text-center">
-          <div class="icon d-flex justify-content-center align-items-center">
-            <span class="flaticon-books"></span>
-          </div>
-          <div class="media-body p-2 mt-3">
-            <h3 class="heading">Book &amp; Library</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
-        <div class="media block-6 d-block text-center">
-          <div class="icon d-flex justify-content-center align-items-center">
-            <span class="flaticon-diploma"></span>
-          </div>
-          <div class="media-body p-2 mt-3">
-            <h3 class="heading">Sport Clubs</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div>
-      </div>
+      <?php } ?>
     </div>
   </div>
 </section>

@@ -10,26 +10,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from themewagon.github.io/fox/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 06:10:25 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <title>Fox University - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/ionicons.min.css">
-
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -87,7 +80,7 @@
 	        	<li class="nav-item <?php if($page == 'courses.php') { echo 'active'; }?>"><a href="courses.php" class="nav-link">Courses</a></li>
 	        	<li class="nav-item <?php if($page == 'teacher.php') { echo 'active'; }?>"><a href="teacher.php" class="nav-link">Staff</a></li>
 	        	<li class="nav-item <?php if($page == 'blog.php') { echo 'active'; }?>"><a href="blog.php" class="nav-link">Blog</a></li>
-	          <li class="nav-item <?php if($page == 'contact.php') { echo 'active'; }?>"><a href="contact.php" class="nav-link">Contact</a></li>
+	          	<li class="nav-item <?php if($page == 'contact.php') { echo 'active'; }?>"><a href="contact.php" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>

@@ -12,9 +12,11 @@
                         <li><a href="index.php"><i class="fa fa-home"></i> Dashboard</a></li>
                         <?php if($_SESSION['role']==1 || $_SESSION['role']==2 ){ ?>
                         <li><a href="all-user.php"><i class="fa fa-user-circle"></i> User</a></li>
-                        <li><a href="all-message.php"><i class="fa fa-comments"></i> All Messages</a></li>
                         <?php }?>
                         <li><a href="all-banner.php"><i class="fas fa-images"></i> Banner</a></li>
+                        <li><a href="all-feature.php"><i class="fas fa-list-ul"></i> Feature</a></li>
+                        <li><a href="all-offer.php"><i class="fas fa-gift"></i> Offer</a></li>
+                        <li><a href="all-message.php"><i class="fa fa-comments"></i> Contact Messages</a></li>
                         <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </div>
