@@ -56,8 +56,9 @@
             $email = htmlentities ($_POST['email'], ENT_QUOTES);
             $subject = htmlentities ($_POST['sub'], ENT_QUOTES);
             $message = htmlentities ($_POST['mess'], ENT_QUOTES);
+            $time = date("Y-m-d h:i:sa");
             // $contmess = 'Name: '.$name.'\n'.'Email: '.$email.'\n'.'Subject: '.$sub.'\n'.'Message: '.$message;
-            $selet = "INSERT INTO as_contact(con_name, con_email, con_subj, con_mess)VALUES('$name', '$email', '$subject', '$message')";
+            $selet = "INSERT INTO as_contact(con_name, con_email, con_subj, con_mess, con_time)VALUES('$name', '$email', '$subject', '$message', '$time')";
             if(mysqli_query($con, $selet)){
               // mail('asifshezan7@gmail.com','University project contact message.',$contmess);
               echo "Successfully send your message.";

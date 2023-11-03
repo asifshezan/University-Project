@@ -11,39 +11,33 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-8">
-                        <h4 class="card_header_title"><i class="fab fa-gg-circle"></i>All Contact Messages</h4>
+                        <h4 class="card_header_title"><i class="fab fa-gg-circle"></i>All Banner Info</h4>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <?php if($_SESSION['role']==1){ ?>
+                        <a href="add-banner.php" class="btn btn-sm btn-dark card_top_btn"><i class="fa fa-th"></i>Add Banner</a>
+                        <?php } ?>
                     </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
             <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                <form class="form-inline">
-                    </form><form class="form-inline" method="get" action="search-user.php">
-                    <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="" name="search" placeholder="search here">
-                    </div>
-                    <button type="submit" class="btn btn-primary mb-2">SEARCH</button>
-                </form>
-                </div>
-            </div>
                 <table class="table table-bordered table-striped table-hover custom_table">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Subject</th>
-                            <th scope="col">Message</th>
-                            <th scope="col">Time</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Subtitle</th>
+                            <th scope="col">Button</th>
+                            <th scope="col">URL</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php 
                     $i = 1;
-                    $sel = "SELECT * FROM as_contact ORDER BY con_id ASC";
+                    $sel = "SELECT * FROM as_banner ORDER BY ban_id ASC";
                     $Query = mysqli_query($con,$sel);
                     while($data = mysqli_fetch_assoc($Query)){
                     ?>
@@ -56,16 +50,22 @@
                                     echo $check;
                                 }
                             ?></td>
-                            <td><?= $data['con_name']; ?></td>
-                            <td><?= $data['con_email']; ?></td>
-                            <td><?= substr($data['con_subj'],0,20); ?>.....</td>
-                            <td><?= substr($data['con_mess'],0,40); ?>.....</td>
-                            <td><?= $data['con_time']; ?></td>
+                            <td><?= $data['ban_title']; ?></td>
+                            <td><?= $data['ban_subtitle']; ?></td>
+                            <td><?= $data['ban_button']; ?></td>
+                            <td><?= $data['ban_url']; ?></td>
                             <td>
-                                <a href="view-message.php?v=<?php echo $data['con_id']; ?>"><i class="fa fa-plus-square fa-lg"></i></a>
+                                <?php if($data['ban_image'] != ''){ ?>
+                                <img src="uploads/<?= $data['ban_image']; ?>" class="img-thumbnail" style="height: 50px; max-width: 80px;" alt="">
+                                <?php }else{ ?>
+                                    <img src="images/avatar.png" class="img-thumbnail" style="height: 50px; max-width: 80px;" alt="">
+                                <?php } ?>
+                            </td>
+                            <td>
+                                <a href="view-banner.php?v=<?php echo $data['ban_id']; ?>"><i class="fa fa-plus-square fa-lg"></i></a>
                                 <?php if($_SESSION['role']==1){ ?>
-                                <a href="edit-message.php?e=<?= $data['con_id'] ?>"><i class="fas fa-pen-square fa-lg"></i></a>
-                                <a href="delete-message.php?d=<?= $data['con_id'] ?>"><i class="fa fa-trash fa-lg"></i></a>
+                                <a href="edit-banner.php?e=<?= $data['ban_id'] ?>"><i class="fas fa-pen-square fa-lg"></i></a>
+                                <a href="delete-banner.php?d=<?= $data['ban_id'] ?>"><i class="fa fa-trash fa-lg"></i></a>
                                 <?php } ?>
                             </td>
                         </tr>

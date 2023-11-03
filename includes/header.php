@@ -1,3 +1,12 @@
+<?php
+	// print_r($_SERVER);
+	// echo($_SERVER['PHP_SELF']);
+	$link = explode('/', $_SERVER['PHP_SELF']);
+	// print_r($link);
+	$page = $link[2];
+	// echo $page;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +39,7 @@
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-center align-items-stretch">
     			<div class="col-md-4 d-flex align-items-center py-4">
-    				<a class="navbar-brand" href="index.php">Fox. <span>University</span></a>
+    				<a class="navbar-brand" href="index.php">Fox. University</a>
     			</div>
 	    		<div class="col-lg-8 d-block">
 		    		<div class="row d-flex">
@@ -73,12 +82,12 @@
         </form>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active"><a href="index.php" class="nav-link pl-0">Home</a></li>
-	        	<li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="courses.php" class="nav-link">Courses</a></li>
-	        	<li class="nav-item"><a href="teacher.php" class="nav-link">Staff</a></li>
-	        	<li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+	        	<li class="nav-item <?php if($page == 'index.php') { echo 'active'; } ?>"><a href="index.php" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item <?php if($page == 'about.php') { echo 'active'; }?>"><a href="about.php" class="nav-link">About</a></li>
+	        	<li class="nav-item <?php if($page == 'courses.php') { echo 'active'; }?>"><a href="courses.php" class="nav-link">Courses</a></li>
+	        	<li class="nav-item <?php if($page == 'teacher.php') { echo 'active'; }?>"><a href="teacher.php" class="nav-link">Staff</a></li>
+	        	<li class="nav-item <?php if($page == 'blog.php') { echo 'active'; }?>"><a href="blog.php" class="nav-link">Blog</a></li>
+	          <li class="nav-item <?php if($page == 'contact.php') { echo 'active'; }?>"><a href="contact.php" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>

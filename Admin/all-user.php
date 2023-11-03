@@ -41,8 +41,8 @@
                             <th scope="col">Phone</th>
                             <th scope="col">Email</th>
                             <th scope="col">Username</th>
-                            <th scope="col">Role</th></th>
-                            <th scope="col">Image</th></th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>

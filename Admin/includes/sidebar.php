@@ -14,7 +14,7 @@
                         <li><a href="all-user.php"><i class="fa fa-user-circle"></i> User</a></li>
                         <li><a href="all-message.php"><i class="fa fa-comments"></i> All Messages</a></li>
                         <?php }?>
-                        <li><a href="#"><i class="fas fa-images"></i> Banner</a></li>
+                        <li><a href="all-banner.php"><i class="fas fa-images"></i> Banner</a></li>
                         <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </div>
