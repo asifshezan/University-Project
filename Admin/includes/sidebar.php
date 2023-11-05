@@ -18,7 +18,8 @@
                         <li><a href="all-feature.php"><i class="fas fa-list-ul"></i> Feature</a></li>
                         <li><a href="all-offer.php"><i class="fas fa-gift"></i> Offer</a></li>
                         <li><a href="all-course.php"><i class="fas fa-calendar-alt"></i> Course</a></li>
-                        <li><a href="all-teacher.php"><i class="fas fa-users"></i> All Teachers</a></li>
+                        <li><a href="all-teacher.php"><i class="fas fa-users"></i> Teachers</a></li>
+                        <li><a href="all-blog.php"><i class="fas fa-blog"></i> Blog</a></li>
                         <li><a href="all-message.php"><i class="fa fa-comments"></i> Contact Messages</a></li>
                         <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
