@@ -20,6 +20,7 @@
                         <li><a href="all-course.php"><i class="fas fa-calendar-alt"></i> Course</a></li>
                         <li><a href="all-teacher.php"><i class="fas fa-users"></i> Teachers</a></li>
                         <li><a href="all-blog.php"><i class="fas fa-blog"></i> Blog</a></li>
+                        <li><a href="all-quote.php"><i class="fa fa-quote-left"></i> Quote Messages</a></li>
                         <li><a href="all-message.php"><i class="fa fa-comments"></i> Contact Messages</a></li>
                         <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>

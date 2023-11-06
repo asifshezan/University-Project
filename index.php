@@ -254,13 +254,33 @@
             <h2 class="mb-4">Request A Quote</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           </div>
-          <form action="#" class="appointment-form ftco-animate">
+
+          <?php 
+          if(!empty($_POST)){
+            $fname = $_POST['fname'];
+            $lname = $_POST['lname'];
+            $phone = $_POST['phone'];
+            $mess = $_POST['mess'];
+            $course = $_POST['course'];
+
+            $insert = "INSERT INTO as_quote(quote_fname, quote_lname, quote_phone, quote_mess, course_list_id)VALUES('$fname', '$lname', '$phone', '$mess', '$course')";
+            if(mysqli_query($con, $insert)){
+              echo "Successfully send your quote message.";
+            }else{
+              echo "Opps! Failed to send your message.";
+            }
+          }
+          ?>
+
+
+
+          <form method="POST" action="#" class="appointment-form ftco-animate">
             <div class="d-md-flex">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="First Name">
+                <input type="text" class="form-control" name="fname" placeholder="First Name">
               </div>
               <div class="form-group ml-md-4">
-                <input type="text" class="form-control" placeholder="Last Name">
+                <input type="text" class="form-control" name="lname" placeholder="Last Name">
               </div>
             </div>
             <div class="d-md-flex">
@@ -270,24 +290,26 @@
                     <div class="icon">
                       <span class="ion-ios-arrow-down"></span>
                     </div>
-                    <select name="" class="form-control">
-                      <option value="">Select Your Course</option>
-                      <option value="">Art Lesson</option>
-                      <option value="">Language Lesson</option>
-                      <option value="">Music Lesson</option>
-                      <option value="">Sports</option>
-                      <option value="">Other Services</option>
+                    <select name="course" class="form-control">
+                      <option value="0">Select Your Course</option>
+                      <?php 
+                      $select = "SELECT * FROM as_course_list ORDER BY course_list_id ASC";
+                      $Qy = mysqli_query($con, $select);
+                      while($allcourse = mysqli_fetch_assoc($Qy)){
+                      ?>
+                      <option value="<?= $allcourse['course_list_id'] ?>"><?= $allcourse['course_list_name'] ?></option>
+                    <?php } ?>
                     </select>
                   </div>
                 </div>
               </div>
               <div class="form-group ml-md-4">
-                <input type="text" class="form-control" placeholder="Phone">
+                <input type="text" class="form-control" name="phone" placeholder="Phone">
               </div>
             </div>
             <div class="d-md-flex">
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+                <textarea name="mess" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group ml-md-4">
                 <input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
