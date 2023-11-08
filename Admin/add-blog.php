@@ -22,15 +22,21 @@
 
         if(mysqli_query($con, $insert)){
             move_uploaded_file($image['tmp_name'],'uploads/blog/'.$imageName);
-            echo "Successfully insert the blog";
+
+            $_SESSION['status'] = "Successfully insert the blog";
+            $_SESSION['status_code'] = "success";
         }else{
-            echo "Opps! There is an error.";
+            $_SESSION['status'] = "Opps! There is an error.";
+            $_SESSION['status_code'] = "error";
         }
     }else{
-        echo "Please select a role.";
+        $_SESSION['status'] = "Please select a role.";
+        $_SESSION['status_code'] = "error";
     }
         }else{
             echo "Please enter your title.";
+        $_SESSION['status'] = "Please enter your title.";
+        $_SESSION['status_code'] = "error";
         }
     }
 ?>
