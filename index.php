@@ -256,20 +256,50 @@
           </div>
 
           <?php 
-          if(!empty($_POST)){
-            $fname = $_POST['fname'];
-            $lname = $_POST['lname'];
-            $phone = $_POST['phone'];
-            $mess = $_POST['mess'];
-            $course = $_POST['course'];
+            if(!empty($_POST)){
+              $fname = $_POST['fname'];
+              $lname = $_POST['lname'];
+              $phone = $_POST['phone'];
+              $mess = $_POST['mess'];
+              $course = $_POST['course'];
+              
+              if(!empty($phone)){
+              $insert = "INSERT INTO as_quote(quote_fname, quote_lname, quote_phone, quote_mess, course_list_id)VALUES('$fname', '$lname', '$phone', '$mess', '$course')";
+              if(mysqli_query($con, $insert)){
+                $_SESSION['status'] = "Successfully send your quote message.";
+          ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong><?= $_SESSION['status']; ?></strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+          <?php
+               } else{
+              $_SESSION['status'] = "Opps! There is an error.";
+          ?>    
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong><?= $_SESSION['status']; ?></strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+               
+                <?php
+              }
 
-            $insert = "INSERT INTO as_quote(quote_fname, quote_lname, quote_phone, quote_mess, course_list_id)VALUES('$fname', '$lname', '$phone', '$mess', '$course')";
-            if(mysqli_query($con, $insert)){
-              echo "Successfully send your quote message.";
-            }else{
-              echo "Opps! Failed to send your message.";
-            }
+          }else{
+            $_SESSION['status'] = "Please insert your phone number.";
+            ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong><?= $_SESSION['status']; ?></strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            <?php
           }
+        }
           ?>
 
 

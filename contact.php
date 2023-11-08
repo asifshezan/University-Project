@@ -58,13 +58,44 @@
             $message = htmlentities ($_POST['mess'], ENT_QUOTES);
             $time = date("Y-m-d h:i:sa");
             // $contmess = 'Name: '.$name.'\n'.'Email: '.$email.'\n'.'Subject: '.$sub.'\n'.'Message: '.$message;
+
+            if(!empty($email)){
             $selet = "INSERT INTO as_contact(con_name, con_email, con_subj, con_mess, con_time)VALUES('$name', '$email', '$subject', '$message', '$time')";
             if(mysqli_query($con, $selet)){
               // mail('asifshezan7@gmail.com','University project contact message.',$contmess);
-              echo "Successfully send your message.";
+              $_SESSION['status'] = "Successfully send your message.";
+            ?>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong><?= $_SESSION['status']; ?></strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              <?php
+
             }else{
-              echo "Opps! Failed to send your message.";
+              
+              $_SESSION['status'] = "Opps! Failed to send your message.";
+              ?>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong><?= $_SESSION['status']; ?></strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              <?php
             }
+          }else{
+            $_SESSION['status'] = "Please insert your email.";
+          ?>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong><?= $_SESSION['status']; ?></strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              <?php
+          }
           }
           ?>
 
