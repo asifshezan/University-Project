@@ -431,7 +431,6 @@
             </div>
           </div>
           <?php } ?>
-          
         </div>
       </div>
     </div>
@@ -440,34 +439,20 @@
 <section class="ftco-gallery">
   <div class="container-wrap">
     <div class="row no-gutters">
+      <?php 
+      $selet = "SELECT * FROM as_gallery ORDER BY gallery_id ASC";
+      $que = mysqli_query($con, $selet);
+      while($gallyinfo = mysqli_fetch_assoc($que)){
+      ?>
+      
       <div class="col-md-3 ftco-animate">
-        <a href="images/image_1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/course-1.jpg);">
+        <a href="<?= $gallyinfo['gallery_url']; ?>" class="gallery image-popup img d-flex align-items-center" style="background-image: url(admin/uploads/gallery/<?= $gallyinfo['gallery_image'] ?>);">
           <div class="icon mb-4 d-flex align-items-center justify-content-center">
             <span class="icon-instagram"></span>
           </div>
         </a>
       </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="images/image_2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_2.jpg);">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-instagram"></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="images/image_3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_3.jpg);">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-instagram"></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="images/image_4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_4.jpg);">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-instagram"></span>
-          </div>
-        </a>
-      </div>
+      <?php } ?>
     </div>
   </div>
 </section>

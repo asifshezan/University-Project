@@ -23,6 +23,7 @@
                         <li><a href="all-review.php"><i class="fas fa-comment-dots"></i> Review</a></li>
                         <li><a href="all-quote.php"><i class="fa fa-quote-left"></i> Quote Messages</a></li>
                         <li><a href="all-message.php"><i class="fa fa-comments"></i> Contact Messages</a></li>
+                        <li><a href="all-gallery.php"><i class="fa fa-images"></i> Gallery</a></li>
                         <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </div>
