@@ -14,6 +14,7 @@
                         <?php if($_SESSION['role']==1 || $_SESSION['role']==2 ){ ?>
                         <li><a href="all-user.php"><i class="fa fa-user-circle"></i> User</a></li>
                         <?php }?>
+                        <li><a href="all-content.php"><i class="fas fa-file-alt"></i> Contents</a></li>
                         <li><a href="all-banner.php"><i class="fas fa-images"></i> Banner</a></li>
                         <li><a href="all-feature.php"><i class="fas fa-list-ul"></i> Feature</a></li>
                         <li><a href="all-offer.php"><i class="fas fa-gift"></i> Offer</a></li>

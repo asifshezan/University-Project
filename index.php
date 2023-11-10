@@ -57,7 +57,7 @@
         ?>
     <div class="row d-flex">
       <div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
-        <div class="img" style="background-image: url(images/about.jpg);border"></div>
+        <div class="img" style="background-image: url(admin/uploads/<?= $con1['content_image']; ?>);border"></div>
       </div>
       <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
         <h2 class="mb-4"><?= $con1['content_title']; ?></h2>
