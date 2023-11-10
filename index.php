@@ -50,13 +50,18 @@
 </section>
 <section class="ftco-section ftco-no-pt ftc-no-pb">
   <div class="container">
+    <?php
+        $selcon1="SELECT * FROM as_content WHERE content_id=1";
+        $Qcon1=mysqli_query($con, $selcon1);
+        $con1=mysqli_fetch_assoc($Qcon1);
+        ?>
     <div class="row d-flex">
       <div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
-        <div class="img" style="background-image: url(images/about.jpg); border"></div>
+        <div class="img" style="background-image: url(images/about.jpg);border"></div>
       </div>
       <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
-        <h2 class="mb-4">What We Offer</h2>
-        <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+        <h2 class="mb-4"><?= $con1['content_title']; ?></h2>
+        <p><?= $con1['content_subtitle']; ?></p>
         <div class="row mt-5">
         <?php 
           $selt = "SELECT * FROM as_offer ORDER BY offer_id ASC LIMIT 0,4";
@@ -92,10 +97,14 @@
           </div>
         </div>
       </div>
+      <?php
+        $selcon2="SELECT * FROM as_content WHERE content_id=2";
+        $Qcon2=mysqli_query($con, $selcon2);
+        $con2=mysqli_fetch_assoc($Qcon2);
+        ?>
       <div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5">
-        <h2 class="mb-4">Fox University</h2>
-        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+        <h2 class="mb-4"><?= $con2['content_title']; ?></h2>
+        <?= $con2['content_details'] ?>
       </div>
     </div>
     <div class="row d-md-flex align-items-center justify-content-center">
@@ -154,10 +163,15 @@
   <div class="container-fluid px-4">
     <div class="row justify-content-center mb-5 pb-2">
       <div class="col-md-8 text-center heading-section ftco-animate">
+      <?php
+        $selcon3="SELECT * FROM as_content WHERE content_id=4";
+        $Qcon3=mysqli_query($con, $selcon3);
+        $con3=mysqli_fetch_assoc($Qcon3);
+        ?>
         <h2 class="mb-4">
-          <span>Our</span> Courses
+          <span><?= $con3['content_title'] ?></span>
         </h2>
-        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+        <p><?= $con3['content_subtitle'] ?></p>
       </div>
     </div>
     <div class="row">
@@ -194,8 +208,13 @@
   <div class="container-fluid px-4">
     <div class="row justify-content-center mb-5 pb-2">
       <div class="col-md-8 text-center heading-section ftco-animate">
-        <h2 class="mb-4">Certified Teachers</h2>
-        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+      <?php
+        $selcon5="SELECT * FROM as_content WHERE content_id=5";
+        $Qcon5=mysqli_query($con, $selcon5);
+        $con5=mysqli_fetch_assoc($Qcon5);
+        ?>
+        <h2 class="mb-4"><?= $con5['content_title']; ?></h2>
+        <p><?= $con5['content_subtitle']; ?></p>
       </div>
     </div>
     <div class="row">
@@ -251,8 +270,13 @@
       <div class="col-md-6 py-5 px-md-5">
         <div class="py-md-5">
           <div class="heading-section heading-section-white ftco-animate mb-5">
-            <h2 class="mb-4">Request A Quote</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <?php
+        $selcon6="SELECT * FROM as_content WHERE content_id=6";
+        $Qcon6=mysqli_query($con, $selcon6);
+        $con6=mysqli_fetch_assoc($Qcon6);
+        ?>
+            <h2 class="mb-4"><?= $con6['content_title'] ?></h2>
+            <p><?= $con6['content_subtitle'] ?></p>
           </div>
 
           <?php 
@@ -353,10 +377,15 @@
   <div class="container">
     <div class="row justify-content-center mb-5 pb-2">
       <div class="col-md-8 text-center heading-section ftco-animate">
+      <?php
+        $selcon7="SELECT * FROM as_content WHERE content_id=7";
+        $Qcon7=mysqli_query($con, $selcon7);
+        $con7=mysqli_fetch_assoc($Qcon7);
+        ?>
         <h2 class="mb-4">
-          <span>Recent</span> Blog
+          <span><?= $con7['content_title']; ?></span>
         </h2>
-        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+        <p><?= $con7['content_subtitle'] ?></p>
       </div>
     </div>
     <div class="row">
@@ -402,8 +431,13 @@
   <div class="container">
     <div class="row justify-content-center mb-5 pb-2">
       <div class="col-md-8 text-center heading-section ftco-animate">
-        <h2 class="mb-4">Student Says About Us</h2>
-        <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
+      <?php
+        $selcon8="SELECT * FROM as_content WHERE content_id=8";
+        $Qcon8=mysqli_query($con, $selcon8);
+        $con8=mysqli_fetch_assoc($Qcon8);
+        ?>
+        <h2 class="mb-4"><?= $con8['content_title'] ?></h2>
+        <p><?= $con8['content_subtitle'] ?></p>
       </div>
     </div>
     <div class="row ftco-animate justify-content-center">

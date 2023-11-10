@@ -13,8 +13,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/sweetalert.all.min.js"></script>
-
-    
     
 </body>
 </html>
