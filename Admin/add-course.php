@@ -24,13 +24,16 @@
 
         if(mysqli_query($con, $insert)){
             move_uploaded_file($image['tmp_name'],'uploads/course/'.$imageName);
-            echo "Successfully upload the course.";
+            $_SESSION['status'] = "Successfully upload the course.";
+            $_SESSION['status_code'] = "success";
         }else{
-            echo "Opps! There is an error.";
+            $_SESSION['status'] = "Opps! There is an error.";
+            $_SESSION['status_code'] = "success";
         }
 
         }else{
-            echo "Please enter course title.";
+            $_SESSION['status'] = "Please enter course title.";
+            $_SESSION['status_code'] = "success";
         }
     }
 ?>
@@ -115,3 +118,28 @@
     header('Location: index.php');
 }
 ?>
+
+<?php 
+    if(isset($_SESSION['status']) && $_SESSION['status'] != ''){
+        ?>
+    <script>
+    Swal.fire({
+    title: "<?php echo $_SESSION['status']; ?>",
+    icon: "<?php echo $_SESSION['status_code']; ?>"
+    });
+    </script>
+
+<?php
+    }else{
+        ?>
+
+    <script>
+    Swal.fire({
+    title: "<?php echo $_SESSION['status']; ?>",
+    icon: "<?php echo $_SESSION['status_code']; ?>"
+    });
+    </script>
+
+    <?php
+    }
+    ?>

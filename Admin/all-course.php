@@ -57,7 +57,7 @@
                             <td><?= $data['course_seat']; ?></td>
                             <td><?= $data['course_duration']; ?></td>
                             <td><?= $data['course_title']; ?></td>
-                            <td><?= substr($data['course_details'], 0, 55); ?>.....</td>
+                            <td><?= substr($data['course_details'], 0, 20); ?>.....</td>
                             <td><?= $data['course_btn']; ?></td>
                             <td><?= $data['course_btn_url']; ?></td>
                             <td>

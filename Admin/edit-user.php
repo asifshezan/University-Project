@@ -21,10 +21,15 @@
         if($image['name']!=''){
         $imageName = 'user-'.time().'-'.rand(1590,5000).'.'.pathinfo($image['name'],PATHINFO_EXTENSION);
         }
-        $update = "UPDATE as_user SET user_name='$name', user_phone='$phone', user_email='$email', role_id='$role', user_photo='$imageName' WHERE user_id='$eid'";
+        $update = "UPDATE as_user SET user_name='$name', user_phone='$phone', user_email='$email', role_id='$role' WHERE user_id='$eid'";
 
         if(mysqli_query($con, $update)){
-            move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
+            if($imageName != ''){
+                $upd = "UPDATE as_user SET user_photo='$imageName' WHERE user_id='$id'";
+                mysqli_query($con, $upd);
+                move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
+                header('Location: view-user.php?v='. $eid);
+            }
             header('Location: view-user.php?v='. $eid);
         }else{
             header('Location: edit-user.php?e='. $eid);
