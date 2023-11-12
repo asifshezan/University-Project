@@ -60,10 +60,10 @@
                                 <?php } ?>
                             </td>
                             <td>
-                                <a href="view-content.php?v=<?php echo $data['content_id']; ?>"><i class="fa fa-plus-square fa-lg"></i></a>
+                                <a href="view-content.php?v=<?php echo $data['content_id']; ?>"><i class="fa fa-plus-square fa-md"></i></a>
                                 <?php if($_SESSION['role']==1){ ?>
-                                <a href="edit-content.php?e=<?= $data['content_id'] ?>"><i class="fas fa-pen-square fa-lg"></i></a>
-                                <a href="delete-content.php?d=<?= $data['content_id'] ?>"><i class="fa fa-trash fa-lg"></i></a>
+                                <a href="edit-content.php?e=<?= $data['content_id'] ?>"><i class="fas fa-pen-square fa-md"></i></a>
+                                <a href="delete-content.php?d=<?= $data['content_id'] ?>"><i class="fa fa-trash fa-md"></i></a>
                                 <?php } ?>
                             </td>
                         </tr>
