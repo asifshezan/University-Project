@@ -8,7 +8,7 @@
     $que = mysqli_query($con, $selet);
     while( $data = mysqli_fetch_assoc($que)){
   ?>
-  <div class="slider-item" style="background-image:url(admin/uploads/<?= $data['ban_image']; ?>);">
+  <div class="slider-item" style="background-image:url(admin/uploads/banner/<?= $data['ban_image']; ?>);">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">

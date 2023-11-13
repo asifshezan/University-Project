@@ -56,7 +56,7 @@
                             <td><?= $data['ban_url']; ?></td>
                             <td>
                                 <?php if($data['ban_image'] != ''){ ?>
-                                <img src="uploads/<?= $data['ban_image']; ?>" class="img-thumbnail" style="height: 50px; max-width: 80px;" alt="">
+                                <img src="uploads/banner/<?= $data['ban_image']; ?>" class="img-thumbnail" style="height: 50px; max-width: 80px;" alt="">
                                 <?php }else{ ?>
                                     <img src="images/avatar.png" class="img-thumbnail" style="height: 50px; max-width: 80px;" alt="">
                                 <?php } ?>

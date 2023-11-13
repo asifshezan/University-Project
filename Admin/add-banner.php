@@ -19,16 +19,19 @@
         $insert = "INSERT INTO as_banner(ban_title, ban_subtitle, ban_button, ban_url, ban_image)VALUES('$title', '$subtitle', '$button', '$url', '$imageName')";
 
         if(mysqli_query($con, $insert)){
-            move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
-            echo "Successfully upload the banner.";
+            move_uploaded_file($image['tmp_name'],'uploads/banner/'.$imageName);
+            $_SESSION['status'] = "Successfully upload the banner.";
+            $_SESSION['status_code'] = "success";
         }else{
-            echo "Opps! There is an error.";
+            $_SESSION['status'] = "Opps! There is an error.";
+            $_SESSION['status_code'] = "success";
         }
-
         }else{
-            echo "Please enter banner title.";
+            $_SESSION['status'] = "Please enter banner title.";
+            $_SESSION['status_code'] = "success";
         }
     }
+
 ?>
 
 <div class="col-md-12 main_content">
@@ -92,3 +95,30 @@
     header('Location: index.php');
 }
 ?>
+
+
+
+<?php 
+    if(isset($_SESSION['status']) && $_SESSION['status'] != ''){
+        ?>
+    <script>
+    Swal.fire({
+    title: "<?php echo $_SESSION['status']; ?>",
+    icon: "<?php echo $_SESSION['status_code']; ?>"
+    });
+    </script>
+
+<?php
+    }else{
+        ?>
+
+    <script>
+    Swal.fire({
+    title: "<?php echo $_SESSION['status']; ?>",
+    icon: "<?php echo $_SESSION['status_code']; ?>"
+    });
+    </script>
+
+    <?php
+    }
+    ?>
