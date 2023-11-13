@@ -29,6 +29,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Subtitle</th>
                             <th scope="col">Icon</th>
+                            <th scope="col">Background</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -51,6 +52,7 @@
                             <td><?= $data['feat_title']; ?></td>
                             <td><?= substr($data['feat_subtitle'], 0,30); ?>.....</td>
                             <td><?= $data['feat_icon']; ?></td>
+                            <td><?= $data['feat_bg']; ?></td>
                             <td>
                                 <a href="view-feature.php?v=<?php echo $data['feat_id']; ?>"><i class="fa fa-plus-square fa-lg"></i></a>
                                 <?php if($_SESSION['role']==1){ ?>
