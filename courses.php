@@ -7,7 +7,7 @@
 			<div class="container-fluid px-4">
 				<div class="row">
 				<?php 
-					$sele = "SELECT * FROM as_course ORDER BY course_id ASC LIMIT 0,4";
+					$sele = "SELECT * FROM as_course ORDER BY course_id ASC";
 					$que = mysqli_query($con, $sele);
 					while( $data = mysqli_fetch_assoc($que)){
 				?>
@@ -28,7 +28,6 @@
 				</div>
 			</div>
 		</section>
-
 	<?php
   require_once('functions/manage.php');
   get_footer();
