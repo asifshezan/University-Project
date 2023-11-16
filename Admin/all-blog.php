@@ -52,7 +52,7 @@
                                 }
                             ?></td>
                             <td><?= $data['blog_title']; ?></td>
-                            <td><?= substr($data['blog_subtitle'], 0, 55); ?></td>
+                            <td><?= substr($data['blog_subtitle'], 0, 54); ?>.......</td>
                             <td><?= $data['blog_btn']; ?></td>
                             <td><?= $data['blog_url']; ?></td>
                             <td><?= $data['role_name']; ?></td>
