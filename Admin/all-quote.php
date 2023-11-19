@@ -64,7 +64,6 @@
                             <td>
                                 <a href="view-quote.php?v=<?php echo $data['quote_id']; ?>"><i class="fa fa-plus-square fa-lg"></i></a>
                                 <?php if($_SESSION['role']==1){ ?>
-                                <a href="edit-quote.php?e=<?= $data['quote_id'] ?>"><i class="fas fa-pen-square fa-lg"></i></a>
                                 <a href="delete-quote.php?d=<?= $data['quote_id'] ?>"><i class="fa fa-trash fa-lg"></i></a>
                                 <?php } ?>
                             </td>
