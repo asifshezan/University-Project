@@ -24,7 +24,7 @@
         $update = "UPDATE as_banner SET ban_title='$title', ban_subtitle='$subtitle', ban_button='$button', ban_url='$url' WHERE ban_id='$eid'";
 
         if(mysqli_query($con, $update)){
-            if($imageName!= ''){
+            if($imageName != ''){
                 $upd = "UPDATE as_banner SET ban_image = '$imageName' WHERE ban_id = '$id'";
                 mysqli_query($con, $upd);
                 move_uploaded_file($image['tmp_name'], 'uploads/banner/'.$imageName);

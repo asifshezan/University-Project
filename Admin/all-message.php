@@ -64,7 +64,6 @@
                             <td>
                                 <a href="view-message.php?v=<?php echo $data['con_id']; ?>"><i class="fa fa-plus-square fa-lg"></i></a>
                                 <?php if($_SESSION['role']==1){ ?>
-                                <a href="edit-message.php?e=<?= $data['con_id'] ?>"><i class="fas fa-pen-square fa-lg"></i></a>
                                 <a href="delete-message.php?d=<?= $data['con_id'] ?>"><i class="fa fa-trash fa-lg"></i></a>
                                 <?php } ?>
                             </td>

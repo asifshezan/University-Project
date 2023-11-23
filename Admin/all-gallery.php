@@ -34,7 +34,7 @@
                     <tbody>
                     <?php 
                     $i = 1;
-                    $sel = "SELECT * FROM as_gallery ORDER BY gallery_id ASC LIMIT 0,4";
+                    $sel = "SELECT * FROM as_gallery ORDER BY gallery_id ASC";
                     $Query = mysqli_query($con,$sel);
                     while($data = mysqli_fetch_assoc($Query)){
                     ?>

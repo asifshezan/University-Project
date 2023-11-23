@@ -6,7 +6,7 @@
     get_sidebar();
 
     if(!empty($_POST)){
-        $url = $_POST['gl_url'];
+        $url = $_POST['gallery_url'];
         $image = $_FILES['pic'];
         $imageName = '';
         if($image['name']!=''){
@@ -50,7 +50,7 @@
                 <div class="form-group row custom_form_group">
                     <label for="" class="col-md-3 col-sm-3 col-form-label">Gallery URL:</label> 
                     <div class="col-md-7">
-                    <input type="text" class="form-control" name="gl_url">
+                    <input type="text" class="form-control" name="gallery_url">
                     </div>   
                 </div>
                
